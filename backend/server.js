@@ -19,7 +19,7 @@ app.get('/data', (req, res) => {
 })
 
 app.get('/data/:id', (req, res) => {
-  //console.log(req.params)
+  console.log(req.params)
 	try {
 		const searchId = parseInt(req.params.id)
 		//console.log(searchId)
@@ -27,7 +27,7 @@ app.get('/data/:id', (req, res) => {
 		if(isNaN(searchId)) {
 			res.status(418).send("NaN")
 		} else {
-			fs.readFile(`${__dirname}data/data.json`, (err, data) => {
+			fs.readFile(`${__dirname}/data/data.json`, (err, data) => {
 				if (err) {
 					console.log(err)
 					res.send(err)
